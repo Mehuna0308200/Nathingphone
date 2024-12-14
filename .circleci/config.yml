@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  build-and-deploy:
+    docker:
+      - image: cimg/python:3.10
+
+    steps:
+      - checkout
+      - run: pip install --upgrade pip
+      - run: pip install telebot pymongo aiohttp
+      - run: chmod +x *
+      - run: chmod +x RAGNAROK
+      - run: python3 RAGNAROK.py
